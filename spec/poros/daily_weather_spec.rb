@@ -43,9 +43,8 @@ RSpec.describe DailyWeather do
         }
 
     daily = DailyWeather.new(info)
-
     expect(daily).to be_a(DailyWeather)
-    expect(daily.datetime).to eq("2021-11-13 11:00:00.000000000 -0700")
+    expect(daily.date).to eq("2021-11-13")
     expect(daily.sunrise).to eq("2021-11-13 06:42:42.000000000 -0700")
     expect(daily.sunset).to eq("2021-11-13 16:46:03.000000000 -0700")
     expect(daily.max_temp).to eq(63.77)
