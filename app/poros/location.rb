@@ -5,5 +5,4 @@ class Location
     @latitude = info[:lat]
     @longitude = info[:lng]
   end
-
 end
