@@ -1,7 +1,8 @@
 class Forecast
-  attr_reader :current, :hourly, :daily
+  attr_reader :id, :current, :hourly, :daily
 
   def initialize(info)
+    @id = nil
     @current = CurrentWeather.new(info)
     @hourly = info[:hourly][0..7].map do |hour|
                 HourlyWeather.new(hour)
