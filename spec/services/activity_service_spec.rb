@@ -17,6 +17,5 @@ RSpec.describe ActivityService do
     expect(response).to have_key(:key)
     expect(response[:key]).to be_a(String)
     expect(response).to have_key(:accessibility)
-    expect(response[:accessibility]).to be_a(Float)
   end
 end
