@@ -35,7 +35,7 @@ RSpec.describe TinyForecast do
     tiny_forecast = TinyForecast.new(info)
 
     expect(tiny_forecast).to be_a(TinyForecast)
-    expect(tiny_forecast.temp).to eq("57.51F")
+    expect(tiny_forecast.temp).to eq(57.51)
     expect(tiny_forecast.summary).to eq("clear sky")
   end
 end

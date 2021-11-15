@@ -23,7 +23,7 @@ RSpec.describe Activities do
     expect(activities.id).to eq(nil)
     expect(activities.destination).to eq("Denver, CO")
     expect(activities.forecast.summary).to be_a(String)
-    expect(activities.forecast.temp).to be_a(String)
+    expect(activities.forecast.temp).to be_a(Float)
     expect(activities.activities[0].participants).to eq(1)
     expect(activities.activities[0].price).to eq(0)
     expect(activities.activities[0].title).to eq("Learn a new recipe")
