@@ -30,7 +30,6 @@ RSpec.describe 'forecast endpoint' do
     expect(forecast_data[:current]).to have_key(:humidity)
     expect(forecast_data[:current][:humidity]).to be_a(Integer)
     expect(forecast_data[:current]).to have_key(:uvi)
-    expect(forecast_data[:current][:uvi]).to be_a(Float)
     expect(forecast_data[:current]).to have_key(:visibility)
     expect(forecast_data[:current][:visibility]).to be_a(Integer)
     expect(forecast_data[:current]).to have_key(:conditions)
