@@ -8,5 +8,6 @@ class WeatherFacade
     def get_tiny_forecast(lat, long)
       result = WeatherService.get_weather(lat, long)
       TinyForecast.new(result)
+    end
   end
 end
