@@ -94,5 +94,6 @@ RSpec.describe Image do
     expect(image.image_url).to eq("https://images.unsplash.com/photo-1602800458591-eddda28a498b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNzU2NDF8MHwxfHNlYXJjaHwxfHxkZW52ZXJ8ZW58MHx8fHwxNjM2OTMzMTM4&ixlib=rb-1.2.1&q=80&w=1080")
     expect(image.photographer_name).to eq("Andrew Coop")
     expect(image.photographer_url).to eq("https://unsplash.com/@andrewcoop")
+    expect(image.source).to eq('https://unsplash.com/')
   end
 end

@@ -4,7 +4,7 @@ class Image
               :image_url,
               :photographer_name,
               :photographer_url,
-              :website
+              :source
 
   def initialize(info)
     @id = nil
@@ -12,5 +12,6 @@ class Image
     @image_url = info[:urls][:regular]
     @photographer_name = info[:user][:name]
     @photographer_url = info[:user][:links][:html]
+    @source = 'https://unsplash.com/'
   end
 end
