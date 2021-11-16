@@ -15,7 +15,7 @@ RSpec.describe MapquestService do
     expect(response[:results].first[:locations].first[:latLng]).to have_key(:lng)
   end
 
-  it 'gets directions from starting city to end city' do
+  it 'gets route from starting city to end city' do
     response = MapquestService.get_directions("Denver, CO", "Centerville, IN")
 
     expect(response).to be_a(Hash)
@@ -23,6 +23,5 @@ RSpec.describe MapquestService do
     expect(response).to be_a(Hash)
     expect(response[:route]).to have_key(:formattedTime)
     expect(response[:route][:formattedTime]).to be_a(String)
-
   end
 end
