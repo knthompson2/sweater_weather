@@ -9,9 +9,7 @@ class Api::V1::UsersController < ApplicationController
     elsif params[:password] != params[:password_confirmation]
       render json: { error: "fields don't match"}, status: 400
     elsif new_user.save
-      render json: UsersSerializer.new(new_user), status: :ok
-    else
-      render json: { error: 'bad request' }, status: 400
+      render json: UsersSerializer.new(new_user), status: 201
     end
   end
   private

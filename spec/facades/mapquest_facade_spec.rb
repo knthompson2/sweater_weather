@@ -6,4 +6,9 @@ RSpec.describe MapquestFacade do
 
     expect(location).to be_a(Location)
   end
+
+  it 'gets directions from mapquest service' do
+    time = MapquestFacade.get_route_time("Chicago, IL", "Denver, CO")
+    expect(time).to be_a(String)
+  end
 end
