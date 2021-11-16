@@ -7,6 +7,14 @@ class MapquestService
       parse_json(response)
     end
 
+    def get_directions(start_city, end_city)
+      response = conn.get('/directions/v2/route') do |f|
+        f.params['from'] = start_city
+        f.params['to'] = end_city
+      end
+      parse_json(response)
+    end
+
     def conn
       Faraday.new('http://www.mapquestapi.com') do |f|
         f.params['key'] = ENV['mapquest_key']
