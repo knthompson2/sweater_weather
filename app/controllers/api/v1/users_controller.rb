@@ -10,6 +10,8 @@ class Api::V1::UsersController < ApplicationController
       render json: { error: 'missing field'}, status: 400
     elsif User.find_by(email: params[:email])
       render json: { error: 'user already exists'}, status: 400
+    elsif params[:password] != params[:password_confirmation]
+      render json: { error: "fields don't match"}, status: 400
     elsif new_user.save
       session[:user_id] = new_user.id
       new_user.create_api_key

@@ -39,6 +39,13 @@ RSpec.describe 'user request' do
 
     expect(response).to_not be_successful
     expect(status).to eq(400)
-    
+  end
+
+  it 'renders an error if email already in use' do
+    body = {email: "pickle@gmail.com", password: "test", password_confirmation: "test123"}
+    post '/api/v1/users', params: body
+
+    expect(response).to_not be_successful
+    expect(status).to eq(400)
   end
 end
