@@ -14,7 +14,7 @@ RSpec.describe 'user request' do
     expect(user[:data][:id]).to be_a(String)
 
     expect(user[:data]).to have_key(:type)
-    expect(user[:data][:type]).to eq("user")
+    expect(user[:data][:type]).to eq("users")
 
     expect(user[:data]).to have_key(:attributes)
     expect(user[:data][:attributes]).to be_a(Hash)

@@ -5,7 +5,6 @@ class HourlyWeather
               :icon
 
   def initialize(info)
-      # binding.pry
     @time = Time.at(info[:dt]).strftime("%I:%m %p")
     @temp = info[:temp]
     @conditions = info[:weather].first[:description]

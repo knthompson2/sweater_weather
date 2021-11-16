@@ -1,8 +1,4 @@
 class Api::V1::UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
-
   def create
     user_params[:email] = user_params[:email].downcase
     new_user = User.new(user_params)
@@ -13,9 +9,7 @@ class Api::V1::UsersController < ApplicationController
     elsif params[:password] != params[:password_confirmation]
       render json: { error: "fields don't match"}, status: 400
     elsif new_user.save
-      session[:user_id] = new_user.id
-      new_user.create_api_key
-      render json: UserSerializer.new(new_user), status: :ok
+      render json: UsersSerializer.new(new_user), status: :ok
     else
       render json: { error: 'bad request' }, status: 400
     end
