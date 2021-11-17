@@ -229,7 +229,7 @@ The `base path` of each enpoint is:
 }
   ```
    ### Create new road trip
-  `POST /api/v1/sessions`
+  `POST /api/v1/road_trip`
   ```
   {
   "data": {
