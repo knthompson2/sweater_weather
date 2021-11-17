@@ -184,7 +184,7 @@ The `base path` of each enpoint is:
 }
 ```
 ### Get city background
-  `GET /api/v1/backgrounds?location=<CITY,STATE_ABBREVIATION>
+  `GET /api/v1/backgrounds?location=<CITY,STATE_ABBREVIATION>`
   
   ```
   "data": {
