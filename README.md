@@ -39,13 +39,13 @@ The project requirements can be found [here](https://backend.turing.edu/module3/
 This project requires Ruby 2.7.2 and Rails 6.2.4.
 - Fork this repository
 - Install gems and set up your database:
-⋅⋅* `bundle`  
-⋅⋅* `rails db:{drop,create,migrate}` 
-⋅⋅* Create application.yml file for API keys  
-⋅⋅⋅* $bundle exec figaro install  
-⋅⋅⋅* Go to [MapquestAPI](https://developer.mapquest.com/) AND [OpenWeatherAPI](https://openweathermap.org/) AND [Unsplash](https://unsplash.com/documentation)  
-⋅⋅⋅⋅* Create an account for each and get personal API keys  
-⋅⋅⋅* In your config/applicaion.yml file insert keys as such:  
+  - `bundle`  
+  - `rails db:{drop,create,migrate}` 
+  -  Create application.yml file for API keys  
+     - $bundle exec figaro install  
+     - Go to [MapquestAPI](https://developer.mapquest.com/) AND [OpenWeatherAPI](https://openweathermap.org/) AND [Unsplash](https://unsplash.com/documentation)  
+      - Create an account for each and get personal API keys  
+     - In your config/applicaion.yml file insert keys as such:  
 ⋅⋅⋅⋅* mapquest_key:  <your_mapquest_key_here>  
 ⋅⋅⋅⋅* weather_key:  <your_open_weather_key_here>  
 ⋅⋅⋅⋅* unsplash_access_key:  <your_unsplash_access_key_here>  
