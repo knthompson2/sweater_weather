@@ -4,7 +4,7 @@ class Api::V1::RoadTripController < ApplicationController
 
   def create
     if route_time
-      hour = route_time[0..1].to_i + 1
+      hour = route_time[0..1].to_i
       coordinates = MapquestFacade.get_location(destination)
       forecast = WeatherFacade.get_arrival_forecast(coordinates.latitude, coordinates.longitude, hour)
       render json: RoadTripSerializer.new(origin, destination, route_time, forecast), status: 200
