@@ -41,6 +41,4 @@ class Api::V1::RoadTripController < ApplicationController
       render json: { error: "Unauthorized request" }, status: 401
     end
   end
-
-
 end
