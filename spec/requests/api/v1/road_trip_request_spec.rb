@@ -4,7 +4,7 @@ RSpec.describe 'post road trip' do
   it 'returns the road trip' do
     user = User.create!(email: "email@email.com", password: "test", password_confirmation: "test")
     body = {api_key: user.api_key, origin: "Chicago, IL", destination: "Denver, CO"}
-    post '/api/v1/roadtrip', params: body
+    post '/api/v1/road_trip', params: body
 
     roadtrip = JSON.parse(response.body, symbolize_names: true)
     roadtrip_data = roadtrip[:data][:attributes]
@@ -34,7 +34,7 @@ RSpec.describe 'post road trip' do
   it 'renders animpossible road trip road trip' do
     user = User.create!(email: "email@email.com", password: "test", password_confirmation: "test")
     body = {api_key: user.api_key, origin: "Chicago, IL", destination: "Valencia, Spain"}
-    post '/api/v1/roadtrip', params: body
+    post '/api/v1/road_trip', params: body
 
     roadtrip = JSON.parse(response.body, symbolize_names: true)
     roadtrip_data = roadtrip[:data][:attributes]
@@ -59,7 +59,7 @@ RSpec.describe 'post road trip' do
   it 'renders an error if no api_key' do
     user = User.create!(email: "email@email.com", password: "test", password_confirmation: "test")
     body = {origin: "Chicago, IL", destination: "Denver, CO"}
-    post '/api/v1/roadtrip', params: body
+    post '/api/v1/road_trip', params: body
 
     expect(response).to_not be_successful
     expect(status).to eq(401)
@@ -68,7 +68,7 @@ RSpec.describe 'post road trip' do
   it 'renders an error if no origin' do
     user = User.create!(email: "email@email.com", password: "test", password_confirmation: "test")
     body = {api_key: user.api_key, destination: "Valencia, Spain"}
-    post '/api/v1/roadtrip', params: body
+    post '/api/v1/road_trip', params: body
 
     expect(response).to_not be_successful
     expect(status).to eq(400)
@@ -77,7 +77,7 @@ RSpec.describe 'post road trip' do
   it 'renders an error if no destination' do
     user = User.create!(email: "email@email.com", password: "test", password_confirmation: "test")
     body = {api_key: user.api_key, origin: "Valencia, Spain"}
-    post '/api/v1/roadtrip', params: body
+    post '/api/v1/road_trip', params: body
 
     expect(response).to_not be_successful
     expect(status).to eq(400)
