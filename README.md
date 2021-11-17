@@ -64,7 +64,8 @@ The `base path` of each enpoint is:
   ### Get weather forecast
   `GET /api/v1/forecast?location=<CITY,STATE_ABBREVIATION>
   
-  ```{
+  ```
+  {
     "data": {
         "id": null,
         "type": "forecast",
@@ -180,7 +181,73 @@ The `base path` of each enpoint is:
             ]
         }
     }
-}```
+}
+```
+### Get city background
+  `GET /api/v1/backgrounds?location=<CITY,STATE_ABBREVIATION>
+  
+  ```
+  "data": {
+        "id": null,
+        "type": "image",
+        "attributes": {
+            "description": "Community in Denver.",
+            "image_url": "https://images.unsplash.com/photo-1634507307799-ace9b49840b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNzU2NDF8MHwxfHNlYXJjaHwxfHxEZW52ZXIlMkNDT3xlbnwwfHx8fDE2MzcxMDkwOTQ&ixlib=rb-1.2.1&q=80&w=1080",
+            "photographer_name": "Dillon Wanner",
+            "photographer_url": "https://unsplash.com/@dillydallying",
+            "source": "https://unsplash.com/"
+        }
+    }
+}
+  ```
+  ### New user registration
+  `POST /api/v1/users`
+  ```
+  {
+  "data": {
+    "type": "users",
+    "id": "1",
+    "attributes": {
+      "email": "whatever@example.com",
+      "api_key": "jgn983hy48thw9begh98h4539h4"
+    }
+  }
+}
+  ```
+  ### User authentication/login
+  `POST /api/v1/sessions`
+  ```
+    {
+  "data": {
+    "type": "users",
+    "id": "1",
+    "attributes": {
+      "email": "whatever@example.com",
+      "api_key": "jgn983hy48thw9begh98h4539h4"
+    }
+  }
+}
+  ```
+   ### Create new road trip
+  `POST /api/v1/sessions`
+  ```
+  {
+  "data": {
+    "id": null,
+    "type": "roadtrip",
+    "attributes": {
+      "start_city": "Denver, CO",
+      "end_city": "Estes Park, CO",
+      "travel_time": "2 hours, 13 minutes"
+      "weather_at_eta": {
+        "temperature": 59.4,
+        "conditions": "partly cloudy with a chance of meatballs"
+      }
+    }
+  }
+}
+```
+
 ## Contributors
 
 👤  **Kelsey Thompson**
