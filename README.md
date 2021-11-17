@@ -64,7 +64,7 @@ The `base path` of each enpoint is:
   ### Get weather forecast
   `GET /api/v1/forecast?location=<CITY,STATE_ABBREVIATION>
   
-  `{
+  ```{
     "data": {
         "id": null,
         "type": "forecast",
@@ -180,7 +180,7 @@ The `base path` of each enpoint is:
             ]
         }
     }
-}`
+}```
 ## Contributors
 
 👤  **Kelsey Thompson**
