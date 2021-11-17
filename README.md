@@ -46,11 +46,11 @@ This project requires Ruby 2.7.2 and Rails 6.2.4.
      - Go to [MapquestAPI](https://developer.mapquest.com/) AND [OpenWeatherAPI](https://openweathermap.org/) AND [Unsplash](https://unsplash.com/documentation)  
       - Create an account for each and get personal API keys  
      - In your config/applicaion.yml file insert keys as such:  
-⋅⋅⋅⋅* mapquest_key:  <your_mapquest_key_here>  
-⋅⋅⋅⋅* weather_key:  <your_open_weather_key_here>  
-⋅⋅⋅⋅* unsplash_access_key:  <your_unsplash_access_key_here>  
-⋅⋅* Run the test suite with:  `bundle exec rspec` 
-⋅⋅* Run your development server with: `rails s`
+        - mapquest_key:  <your_mapquest_key_here>  
+        - weather_key:  <your_open_weather_key_here>  
+        - unsplash_access_key:  <your_unsplash_access_key_here>  
+  - Run the test suite with:  `bundle exec rspec` 
+  - Run your development server with: `rails s`
 ## Contributors
 
 👤  **Kelsey Thompson**
