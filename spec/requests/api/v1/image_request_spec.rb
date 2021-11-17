@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe '/api/v1/backgrounds?query=location' do
   it 'returns the image info for given city' do
-    get '/api/v1/backgrounds?query=denver'
+    get '/api/v1/backgrounds?location=denver'
 
     image = JSON.parse(response.body, symbolize_names: true)
     image_data = image[:data][:attributes]

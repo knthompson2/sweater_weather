@@ -1,4 +1,4 @@
-class Api::V1::RoadtripController < ApplicationController
+class Api::V1::RoadTripController < ApplicationController
   before_action :require_api_key
   before_action :require_start_and_end
 

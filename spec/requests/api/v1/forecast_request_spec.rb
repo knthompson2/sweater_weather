@@ -37,6 +37,14 @@ RSpec.describe 'forecast endpoint' do
     expect(forecast_data[:current]).to have_key(:icon)
     expect(forecast_data[:current][:icon]).to be_a(String)
 
+    expect(forecast_data[:current]).to_not have_key(:pressure)
+    expect(forecast_data[:current]).to_not have_key(:dew_point)
+    expect(forecast_data[:current]).to_not have_key(:clouds)
+    expect(forecast_data[:current]).to_not have_key(:wind_speed)
+    expect(forecast_data[:current]).to_not have_key(:wind_deg)
+    expect(forecast_data[:current]).to_not have_key(:wind_gust)
+
+
     #hourly weather
     expect(forecast_data).to be_a(Hash)
     expect(forecast_data).to have_key(:current)
@@ -50,6 +58,14 @@ RSpec.describe 'forecast endpoint' do
     expect(forecast_data[:hourly].first[:conditions]).to be_a(String)
     expect(forecast_data[:hourly].first).to have_key(:icon)
     expect(forecast_data[:hourly].first[:icon]).to be_a(String)
+
+    expect(forecast_data[:hourly].first).to_not have_key(:pressure)
+    expect(forecast_data[:hourly].first).to_not have_key(:dew_point)
+    expect(forecast_data[:hourly].first).to_not have_key(:clouds)
+    expect(forecast_data[:hourly].first).to_not have_key(:wind_speed)
+    expect(forecast_data[:hourly].first).to_not have_key(:wind_deg)
+    expect(forecast_data[:hourly].first).to_not have_key(:wind_gust)
+    expect(forecast_data[:hourly].first).to_not have_key(:feels_like)
 
     #daily weather
 
@@ -71,9 +87,18 @@ RSpec.describe 'forecast endpoint' do
     expect(forecast_data[:daily].first[:conditions]).to be_a(String)
     expect(forecast_data[:daily].first).to have_key(:icon)
     expect(forecast_data[:daily].first[:icon]).to be_a(String)
+
+    expect(forecast_data[:daily].first).to_not have_key(:pressure)
+    expect(forecast_data[:daily].first).to_not have_key(:dew_point)
+    expect(forecast_data[:daily].first).to_not have_key(:moonrise)
+    expect(forecast_data[:daily].first).to_not have_key(:moonset)
+    expect(forecast_data[:daily].first).to_not have_key(:moon_phase)
+    expect(forecast_data[:daily].first).to_not have_key(:wind_speed)
+    expect(forecast_data[:daily].first).to_not have_key(:wind_deg)
+    expect(forecast_data[:daily].first).to_not have_key(:wind_gust)
   end
 
-  it 'returns the forecast for given city,state' do
+  it 'renders an error if no city,state' do
     get '/api/v1/forecast?location='
 
     expect(response).to_not be_successful
