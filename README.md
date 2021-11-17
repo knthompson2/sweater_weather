@@ -62,7 +62,7 @@ The `base path` of each enpoint is:
   - For `POST` requests, you must use an API client to provide the information in the request body. 
 
   ### Get weather forecast
-  `GET /api/v1/forecast?location=<CITY,STATE_ABBREVIATION>
+  `GET /api/v1/forecast?location=<CITY,STATE_ABBREVIATION>`
   
   ```
   {
