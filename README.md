@@ -39,7 +39,7 @@ The project requirements can be found [here](https://backend.turing.edu/module3/
 This project requires Ruby 2.7.2 and Rails 6.2.4.
 - Fork this repository
 - Install gems and set up your database:
--- $bundle
+..- $bundle
 -- $rails db:{drop,create,migrate}
 -- Create application.yml file for API keys
 --- $bundle exec figaro install
